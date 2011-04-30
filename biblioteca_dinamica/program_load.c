@@ -9,7 +9,7 @@ int main(int argc, char **argv)
   unsigned long int  valor;
   char *error;
 
-  handle = dlopen("libfatorial.so.1.0",RTLD_LAZY);
+  handle = dlopen("libfatorial.so",RTLD_LAZY);
   if(!handle)
   {
     fprintf(stderr, "%s\n", dlerror());
