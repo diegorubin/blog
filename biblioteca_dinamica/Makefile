@@ -3,7 +3,7 @@ lib:
 	gcc -g -fPIC -shared -Wl,-soname,libfatorial.so fatorial.c -o libfatorial.so
 
 load:
-	gcc -g -rdynamic -o program_load program_load.c -ldl
+	gcc -g -o program_load program_load.c -ldl
 
 program:
 	gcc program.c -o program -L`pwd` -lfatorial

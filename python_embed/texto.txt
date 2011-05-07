@@ -1,0 +1,4 @@
+Um pequeno texto simples.
+Eu quero modifica este texto.
+
+Escrito por <AUTOR>
