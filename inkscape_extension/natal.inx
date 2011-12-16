@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Cartão de Natal</_name>
+  <id>com.diegorubin.extensao.natal</id>
+  <dependency type="executable" location="extensions">natal.py</dependency>
+  <param name="de" type="string" _gui-text="De">Remetente</param>
+  <param name="para" type="string" _gui-text="Para">Para</param>
+  <param name="ano" type="string" _gui-text="Ano">2011</param>
+  <effect>
+    <object-type>all</object-type>
+      <effects-menu>
+        <submenu _name="Cartões"/>
+      </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">natal.py</command>
+  </script>
+</inkscape-extension>
+
