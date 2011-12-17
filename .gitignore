@@ -3,3 +3,8 @@
 *.so
 program
 program_load
+
+# tmp
+*~
+.swp
+
