@@ -3,9 +3,9 @@
   <_name>Cartão de Natal</_name>
   <id>com.diegorubin.extensao.natal</id>
   <dependency type="executable" location="extensions">natal.py</dependency>
-  <param name="de" type="string" _gui-text="De">Remetente</param>
-  <param name="para" type="string" _gui-text="Para">Para</param>
-  <param name="ano" type="string" _gui-text="Ano">2011</param>
+  <param name="de" type="string" _gui-text="De">Fulano</param>
+  <param name="para" type="string" _gui-text="Para">Ciclano</param>
+  <param name="mensagem" type="string" _gui-text="Mensagem">esses são os votos de</param>
   <effect>
     <object-type>all</object-type>
       <effects-menu>

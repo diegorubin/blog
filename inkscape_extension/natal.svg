@@ -14,12 +14,33 @@
    inkscape:export-xdpi="90"
    inkscape:export-filename="C:\Users\Annel\CHRISTMAS CANDLE.png"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:docname="CHRISTMAS CANDLE.svg"
+   sodipodi:docname="natal.svg"
    inkscape:version="0.48.1 r9760"
    sodipodi:version="0.32"
    id="svg2"
-   height="1052.3622047"
-   width="744.09448819">
+   height="744.09448"
+   width="1052.3622">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.43901235"
+     inkscape:cx="220.27915"
+     inkscape:cy="543.60196"
+     inkscape:document-units="px"
+     inkscape:current-layer="svg2"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="710"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1" />
   <defs
      id="defs4">
     <inkscape:perspective
@@ -51,27 +72,6 @@
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     gridtolerance="10000"
-     guidetolerance="10"
-     objecttolerance="10"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.43901235"
-     inkscape:cx="35.862526"
-     inkscape:cy="631.24647"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1024"
-     inkscape:window-height="708"
-     inkscape:window-x="0"
-     inkscape:window-y="26"
-     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -80,17 +80,18 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,-308.2677)">
     <g
        id="g2996"
-       transform="matrix(0.53288629,0,0,0.53288629,305.25487,450.89045)">
+       transform="matrix(0.53288629,0,0,0.53288629,296.69919,585.28302)">
       <path
          id="path3050"
          d="m -131.99318,680.1377 c 16.51444,-1.31055 34.658877,-3.4544 40.320979,-4.76411 5.662102,-1.30972 13.769181,-2.8796 18.01575,-3.48867 4.24657,-0.60906 8.879208,-1.67057 10.294731,-2.35892 1.415523,-0.68835 4.503942,-1.62611 6.863138,-2.08397 8.691692,-1.68671 25.464504,-9.70702 32.78621,-15.67749 10.42923,-8.50444 27.7741594,-30.58992 33.1289588,-42.18344 7.4924072,-16.2216 9.3735522,-46.15885 8.7181622,-138.74566 -0.309357,-43.70357 0.0475,-86.11395 0.793032,-94.24528 1.314386,-14.33576 0.417386,-51.91777 -3.28436,-137.60688 C 14.66063,216.23347 13.492852,161.8625 13.048371,118.15891 11.988442,13.945716 9.5944928,-34.442238 4.4938571,-54.750102 c -2.127791,-8.471571 -4.85425392,-20.056196 -6.0588592,-25.743655 -1.2045862,-5.687454 -2.8619373,-10.340821 -3.6829634,-10.340821 -0.821045,0 -1.4928221,-1.317665 -1.4928221,-2.928111 0,-1.61048 -1.5244801,-4.67865 -3.3877604,-6.818171 -1.863289,-2.13953 -3.893208,-5.96507 -4.511004,-8.50122 -1.836289,-7.53832 -18.107884,-30.81345 -26.416963,-37.78715 -13.218062,-11.09379 -29.660472,-21.45192 -38.605183,-24.31988 -4.71841,-1.51287 -11.281308,-4.04759 -14.584176,-5.63272 -14.151146,-6.79142 -48.998956,-9.44465 -68.371886,-5.2057 -4.38934,0.96043 -18.01797,2.22931 -30.28584,2.81972 -12.26787,0.59042 -24.62154,1.52495 -27.45258,2.07671 -12.17141,2.37221 -66.35194,7.88187 -78.92617,8.02607 -7.54947,0.0866 -17.20076,1.0016 -21.44733,2.03338 -4.24658,1.0318 -13.7145,3.31274 -21.03982,5.06879 -7.32535,1.75607 -14.27429,4.15459 -15.44209,5.33012 -1.16782,1.1755 -5.2117,3.37672 -8.98643,4.89162 -8.11205,3.25555 -21.44733,12.71953 -21.44733,15.22104 0,0.96531 -2.67417,3.75705 -5.94261,6.20386 -3.26842,2.44682 -7.00935,7.68676 -8.31315,11.64436 -1.3038,3.9576 -3.69921,8.59377 -5.32313,10.3026 -8.9067,9.372381 -17.87513,49.678023 -18.20062,81.796645 -0.65725,64.856736 0.20686,136.000285 1.94327,159.993745 1.28511,17.75723 2.08579,98.41735 2.30169,231.86906 0.32756,202.48329 0.37061,204.84232 4.08578,223.88894 3.00843,15.42345 5.25066,21.6977 11.28108,31.56673 4.13947,6.77449 9.23788,13.78675 11.32978,15.58279 2.09194,1.79603 5.45137,4.82132 7.46543,6.72286 2.01407,1.90153 8.68062,6.74033 14.81455,10.75287 6.13394,4.01254 12.31077,8.48995 13.7263,9.94982 8.42692,8.69081 42.29342,16.9084 78.06828,18.94299 23.52972,1.33819 120.56088,-0.30901 148.41552,-2.51949 z"
@@ -144,15 +145,19 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:107.35306549px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:URW Chancery L;-inkscape-font-specification:URW Chancery L Bold Italic"
-       x="374.09869"
-       y="347.03055"
+       style="font-size:72px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:URW Chancery L;-inkscape-font-specification:URW Chancery L Bold Italic;text-anchor:middle;text-align:center"
+       x="708.55927"
+       y="364.49362"
        id="text3090"
        sodipodi:linespacing="125%"
        transform="scale(0.86820373,1.1518034)"><tspan
          sodipodi:role="line"
          id="tspan3092"
-         x="374.09869"
-         y="347.03055">Feliz Natal</tspan></text>
+         x="412.81305"
+         y="364.49362">Feliz natal</tspan><tspan
+         sodipodi:role="line"
+         x="412.81305"
+         y="454.49362"
+         id="tspan3032">e um próspero ano novo</tspan></text>
   </g>
 </svg>
