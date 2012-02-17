@@ -8,3 +8,8 @@ program_load
 *~
 .swp
 
+# android project
+*.apk
+*.class
+*.dex
+
