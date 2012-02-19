@@ -1,6 +1,5 @@
 package com.diegorubin.search_list;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONException;
@@ -19,35 +18,17 @@ public class SearchListActivity extends Activity {
     private ListView lstLinguagens;
     private List<JSONObject> linguagens;
     private LinguagemArrayAdapter adapter;
+    private LinguagemDataSource source;
   
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        // Criação de uma lista quer será utilizada em nosso adapter
-        linguagens = new ArrayList<JSONObject>();
+        source = new LinguagemDataSource(getApplicationContext());
         
-        // Informações que serão utilizados no exemplo
-        try {
-          JSONObject ruby = new JSONObject();
-          ruby.put("nome", "Ruby");
-          ruby.put("descricao", "Sobre a linguagem Ruby");
-          linguagens.add(ruby);
-          
-          JSONObject python = new JSONObject();
-          python.put("nome", "Python");
-          python.put("descricao", "Sobre a linguagem Python");
-          linguagens.add(python);
-          
-          JSONObject perl = new JSONObject();
-          perl.put("nome", "Perl");
-          perl.put("descricao", "Sobre a linuguagem Perl");
-          linguagens.add(perl);
-          
-        } catch (JSONException e) {
-          // Tratando possivel exception ao adicionar informacoes no json
-        }
+        // Recupera do banco as informações que serão uitlizados em nosso adapter
+        linguagens = source.allLinguagens();
         
         // Passamos a lista de exemplo para gerar nosso adpater
         adapter = new LinguagemArrayAdapter(getApplicationContext(), R.layout.linguagem, linguagens);
