@@ -20,7 +20,29 @@ public class LinguagemDataSource {
     db = helper.getDatabase();
   }
   
-  /*
+  /**
+   * Filtrando as linguagens cadastradas no banco.
+   * Este método será utilizado ao pressionar o botão de busca.
+   */
+  public List<JSONObject> filterByNome(String nome) {
+    List<JSONObject> result = new ArrayList<JSONObject>();
+    Cursor cursor = 
+      db.query("linguagens", new String[]{"nome", "descricao"}, 
+               "nome like '%" + nome + "%'",
+               null, null, null, "nome ASC" /*ordenando pelo nome*/);
+
+    cursor.moveToFirst();
+    while(!cursor.isAfterLast()) {
+      result.add(readRow(cursor));
+      
+      cursor.moveToNext();
+    }
+    
+    cursor.close();
+    return result;
+  }
+  
+  /**
    * Recuperando todas a linguagens cadastradas no nosso
    * banco de dados.
    * Iremos retorna-los em List<JSONObject>, pois é o 
@@ -39,21 +61,28 @@ public class LinguagemDataSource {
     
     cursor.moveToFirst();
     while(!cursor.isAfterLast()) {
-      JSONObject obj = new JSONObject();
-      
-      try{
-        // As colunas são recuperadas na ordem que foram selecionadas
-        obj.put("nome", cursor.getString(0));
-        obj.put("descricao",cursor.getString(1));
-      }catch (JSONException e) {
-      }
-      
-      result.add(obj);
+      result.add(readRow(cursor));
       
       cursor.moveToNext();
     }
     
     cursor.close();
     return result;
+  }
+  
+  /**
+   * Método auxiliar para ler resultado da query
+   */
+  private JSONObject readRow(Cursor cursor) {
+    JSONObject obj = new JSONObject();
+    
+    try{
+      // As colunas são recuperadas na ordem que foram selecionadas
+      obj.put("nome", cursor.getString(0));
+      obj.put("descricao",cursor.getString(1));
+    }catch (JSONException e) {
+    }
+    
+    return obj;
   }
 }

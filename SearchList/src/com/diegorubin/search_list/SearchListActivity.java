@@ -6,6 +6,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,16 +27,28 @@ public class SearchListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        // Buscando o elemento Listview da nossa interface principal interface 
+        lstLinguagens = (ListView) findViewById(R.id.lstLinguagens);
+        
         source = new LinguagemDataSource(getApplicationContext());
         
-        // Recupera do banco as informações que serão uitlizados em nosso adapter
-        linguagens = source.allLinguagens();
+        //Verifica se a activity foi chamada através do callback de busca 
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+          String query = intent.getStringExtra(SearchManager.QUERY);
+          
+          // Recupera do banco as informações filtradas
+          linguagens = source.filterByNome(query);
+          
+        } else {
+        
+          // Recupera do banco as informações que serão uitlizados em nosso adapter
+          linguagens = source.allLinguagens();
+        }         
         
         // Passamos a lista de exemplo para gerar nosso adpater
         adapter = new LinguagemArrayAdapter(getApplicationContext(), R.layout.linguagem, linguagens);
         
-        // Buscando o elemento Listview da nossa interface principal interface 
-        lstLinguagens = (ListView) findViewById(R.id.lstLinguagens);
         // Setando o adapter em nossa ListView
         lstLinguagens.setAdapter(adapter);
         
@@ -53,6 +67,6 @@ public class SearchListActivity extends Activity {
           }
           
         });
-        
-    }
+      
+      }
 }

@@ -16,7 +16,17 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                
+                <!-- Avisa que nossa activity pode ser utilizada na busca -->
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+            
+            <!-- Setando esta activity para ser utilizada como callback da busca -->
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".SearchListActivity" />
+            <!-- configuração do dialogo de busca -->
+            <meta-data android:name="android.app.searchable"
+                     android:resource="@xml/searchconf"/> 
         </activity>
     </application>
 
