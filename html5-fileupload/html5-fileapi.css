@@ -1,0 +1,5 @@
+#example-content { text-align: center; }
+#frame { background-color: #000; color: #fff; margin: 50px; width: 400px; height: 450px; padding: 50px; }
+#image-area { width: 100%; border: 1px dotted #fff; padding-top: 50%; padding-bottom: 50%; margin-bottom: 15px; overflow:hidden; }
+
+.hover { border: 1px solid #fff !important; }
