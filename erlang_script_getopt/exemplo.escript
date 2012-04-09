@@ -5,6 +5,8 @@
 -module(exemplo).
 -author('rubin.diego@gmail.com').
 
+% Função que é chamada quando o script é executado.
+% A primeira assinatura é executada quando nenhum parametro é passado.
 main([]) ->
   usage();
 main(Args) ->
@@ -29,6 +31,7 @@ usage(Name) ->
   getopt:usage(option_spec_list(), Name, "arquivo", 
                [{"arquivo", "Arquivo csv contendo as informações descritas no código."}]).
 
+% Uma simples função que retorna a configuração dos parametros esperados.
 option_spec_list() ->
   [
     % {Nome, NomeCurto,  NomeLongo,  Tipo Esperado, Mensagem de Ajuda}
@@ -50,6 +53,7 @@ read(Line, File, Media, Aprovado, Reprovado) ->
   Content = io:get_line(File, ""),
   read(Content, File, Media, Aprovado, Reprovado).
 
+% A função pega as informações de uma linha e trata as mesmas
 calculate(Line) ->
   % As informações no arquivo estão dispostas como o exemplo no comeco do arquivo.
   % Iremos quebrar as informações separadas por vírgulas.
@@ -58,6 +62,7 @@ calculate(Line) ->
   Resultado = (lists:sum([list_to_float(string:strip(X)) || X <- Notas ])/3.0),
   {Nome, Resultado}.
 
+% Verifica se o aluno foi aprovado ou não e imprime o resultado na tela.
 resultado(Nome, Resultado, Media, Aprovado, Reprovado) ->
   Mensagem = if 
     Resultado >= Media ->
