@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Create a new user
+  body
+    h1 Create a new user
+
+    form(action="/users" method="post")
+      label(for="username") username:
+      input(id="username" name="username" type="text")
+
+      label(for="email") email:
+      input(id="email" name="email" type="text")
+
+      label(for="password") password:
+      input(id="password" name="password" type="password")
+

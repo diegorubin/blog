@@ -13,3 +13,6 @@ program_load
 *.class
 *.dex
 
+# node projects
+node_modules
+
