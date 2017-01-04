@@ -1,9 +1,14 @@
 doctype html
 html
   head
+    link(rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet" type="text/css" href="/stylesheets/users.css")
     title Create a new user
   body
     h1 Create a new user
+
+    if message
+      p.alert= message
 
     form(action="/users" method="post")
       label(for="username") username:
@@ -14,4 +19,6 @@ html
 
       label(for="password") password:
       input(id="password" name="password" type="password")
+
+      input(value="create" type="submit")
 

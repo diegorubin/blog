@@ -19,11 +19,12 @@
   "dependencies": {
     "body-parser": "^1.12.3",
     "express": "^4.12.3",
-    "pug": "^2.0.0-beta6"
+    "pug": "^2.0.0-beta6",
+    "axios": "^0.15.3"
   },
   "devDependencies": {
-    "mocha": "^2.2.4",
-    "should": "^6.0.1"
+    "jasmine": "^2.5.2",
+    "jsdom": "^9.9.1"
   }
 }
 
