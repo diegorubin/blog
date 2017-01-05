@@ -1,5 +1,6 @@
 function FormValidator() {
   var _this = this;
+  _this.errors = {};
 
   _this.init = function(form) {
     _this.form = document.getElementById(form);
@@ -26,14 +27,29 @@ function FormValidator() {
     return true;
   }
 
+  _this.addError = function(fieldName, content) {
+    _this.errors[fieldName] = _this.errors[fieldName] || [];
+    _this.errors[fieldName].push(content);
+  }
+
   _this.email = function(input) {
     var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return emailPattern.test(input.value);
+    var result = emailPattern.test(input.value);
+
+    if (!result) {
+      _this.addError(input.getAttribute('name'), 'email.invalid');
+    }
+
+    return result;
   }
 
   _this.confirmation = function(input) {
     var originalInput = document.getElementById(input.getAttribute('data-validation-equals'));
-    return originalInput.value === input.value;
+    var result = originalInput.value === input.value;
+    if (!result) {
+      _this.addError(input.getAttribute('name'), 'confirmation.notEqual');
+    }
+    return result;
   }
 
 }
