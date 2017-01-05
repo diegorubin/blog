@@ -4,6 +4,9 @@ function FormValidator() {
 
   _this.init = function(form) {
     _this.form = document.getElementById(form);
+    _this.form.onsubmit = function() {
+      return _this.isValid();
+    };
   };
 
   _this.isValid = function() {

@@ -20,6 +20,7 @@ const clientHelpers = {
     jsdom.env({
       html: html,
       src: scripts,
+      virtualConsole: virtualConsole,
       created: (err, window) => {
         window.addEventListener("error", function (event) {
           console.error("script error!!", event.error);

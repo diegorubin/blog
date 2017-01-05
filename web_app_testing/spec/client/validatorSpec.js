@@ -58,5 +58,23 @@ describe('FormValidator', () => {
       });
     });
   });
+
+  describe('not submit form with errors', () => {
+
+    it('call isValid method', (done) => {
+      contextOptions.html = './spec/client/fixtures/validator/email-invalid.html';
+      browserContext(contextOptions, done, (window, document) => {
+        var formValidator = new window.FormValidator();
+        formValidator.init('user');
+
+        spyOn(formValidator, 'isValid');
+        document.getElementById('user').onsubmit();
+
+        expect(formValidator.isValid).toHaveBeenCalled();
+      });
+
+    });
+
+  });
 });
 
