@@ -34,6 +34,7 @@ const clientHelpers = {
           done();
         } catch (error) {
           console.error(error.stack);
+          fail('error on execute script');
           done(error);
         }
       }
