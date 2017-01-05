@@ -31,5 +31,10 @@ function FormValidator() {
     return emailPattern.test(input.value);
   }
 
+  _this.confirmation = function(input) {
+    var originalInput = document.getElementById(input.getAttribute('data-validation-equals'));
+    return originalInput.value === input.value;
+  }
+
 }
 

@@ -12,7 +12,7 @@ describe('FormValidator', () => {
       contextOptions.html = './spec/client/fixtures/validator/email-invalid.html';
       browserContext(contextOptions, done, (window, document) => {
         var formValidator = new window.FormValidator();
-        formValidator.init('email-invalid');
+        formValidator.init('user');
         expect(formValidator.isValid()).toBe(false);
       });
     });
@@ -21,11 +21,23 @@ describe('FormValidator', () => {
       contextOptions.html = './spec/client/fixtures/validator/email-valid.html';
       browserContext(contextOptions, done, (window, document) => {
         var formValidator = new window.FormValidator();
-        formValidator.init('email-valid');
+        formValidator.init('user');
         expect(formValidator.isValid()).toBe(true);
       });
     });
   });
 
+  describe('validate password confirmation field', () => {
+
+    it('return false if password confirmation is correct', (done) => {
+      contextOptions.html = './spec/client/fixtures/validator/password-confirmation-invalid.html';
+      browserContext(contextOptions, done, (window, document) => {
+        var formValidator = new window.FormValidator();
+        formValidator.init('user');
+        expect(formValidator.isValid()).toBe(false);
+      });
+    });
+
+  });
 });
 
