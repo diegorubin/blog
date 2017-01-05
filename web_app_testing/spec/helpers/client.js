@@ -1,3 +1,5 @@
+'use strict';
+
 const jsdom = require('jsdom');
 const fs = require("fs");
 
@@ -11,8 +13,7 @@ const clientHelpers = {
 
     options.scripts = options.scripts || [];
   
-  
-    for(const idx in options.scripts) {
+    for(let idx in options.scripts) {
       const script = options.scripts[idx];
       scripts.push(fs.readFileSync(script, 'utf-8'));
     }
