@@ -2,10 +2,14 @@ function FormValidator() {
   var _this = this;
   _this.errors = {};
 
-  _this.init = function(form) {
+  _this.init = function(form, callback) {
     _this.form = document.getElementById(form);
     _this.form.onsubmit = function() {
-      return _this.isValid();
+      var result = _this.isValid();
+      if (!result && callback) {
+        callback(); 
+      }
+      return result;
     };
   };
 

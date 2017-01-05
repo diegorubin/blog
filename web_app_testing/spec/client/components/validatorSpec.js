@@ -1,7 +1,7 @@
-const browserContext = require('../../spec/helpers/client').browserContext;
+const browserContext = require('../../../spec/helpers/client').browserContext;
 
 const contextOptions = {
-  scripts: ['./app/public/javascripts/validator.js']
+  scripts: ['./app/public/javascripts/components/validator.js']
 };
 
 describe('FormValidator', () => {
@@ -75,6 +75,19 @@ describe('FormValidator', () => {
 
     });
 
+    it('call custom callback if submit fail', (done) => {
+      contextOptions.html = './spec/client/fixtures/validator/email-invalid.html';
+      browserContext(contextOptions, done, (window, document) => {
+        var formValidator = new window.FormValidator();
+        var callback = jasmine.createSpy("callback");
+        formValidator.init('user', callback);
+
+        document.getElementById('user').onsubmit();
+
+        expect(callback).toHaveBeenCalled();
+      });
+
+    });
   });
 });
 

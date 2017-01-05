@@ -1,7 +1,7 @@
-const browserContext = require('../../spec/helpers/client').browserContext;
+const browserContext = require('../../../spec/helpers/client').browserContext;
 
 const contextOptions = {
-  scripts: ['./app/public/javascripts/notification.js']
+  scripts: ['./app/public/javascripts/components/notification.js']
 };
 
 describe('FormValidator', () => {
