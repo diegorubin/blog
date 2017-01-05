@@ -1,6 +1,5 @@
 function FormValidator() {
   var _this = this;
-  _this.errors = {};
 
   _this.init = function(form, callback) {
     _this.form = document.getElementById(form);
@@ -14,15 +13,17 @@ function FormValidator() {
   };
 
   _this.isValid = function() {
+    _this.errors = {};
     return _this._checkInputs();
   };
 
   _this._checkInputs = function() {
     var valid = true;
     var inputs = document.getElementsByTagName('input');
-    for (var idx in inputs) {
-      var input = inputs[idx];
-      valid = valid && _this._checkInput(input.getAttribute('data-validation-type'), input);
+    for (var i = 0; i < inputs.length; i++) {
+      var input = inputs[i];
+      var thisField = _this._checkInput(input.getAttribute('data-validation-type'), input);
+      valid = valid && thisField;
     }
     return valid;
   };

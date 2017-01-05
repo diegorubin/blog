@@ -22,6 +22,21 @@ describe('FormValidator', () => {
         expect(span.innerHTML).toEqual('email.invalid, email.duplicated');
       });
     });
+
+    it('do not dupblicate error messages for field', (done) => {
+
+      contextOptions.html = './spec/client/fixtures/notification/form.html';
+      browserContext(contextOptions, done, (window, document) => {
+        var notification = new window.Notification();
+        notification.init();
+        notification.showErrors({'email': ['email.invalid']});
+        notification.showErrors({'email': ['email.invalid']});
+
+        var spans = document.getElementsByTagName('span');
+        expect(spans.length).toEqual(1);
+      });
+    });
+
   });
 
 });

@@ -1,0 +1,8 @@
+request:
+  timeout: 8
+domains:
+  'https://service.com':
+    name: 'service'
+    paths:
+      - /users
+

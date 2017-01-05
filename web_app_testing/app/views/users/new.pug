@@ -5,23 +5,32 @@ html
     link(rel="stylesheet" type="text/css" href="/stylesheets/users.css")
     title Create a new user
   body
-    h1 Create a new user
+    .container
+      h1 Create a new user
 
-    if message
-      p.alert= message
+      if message
+        p.alert= message
 
-    form(action="/users" method="post")
-      label(for="username") username:
-      input(id="username" name="username" type="text")
+      form(action="/users" method="post" id="user")
+        .field-wrap
+          label(for="username") username:
+          input(id="username" name="username" type="text")
 
-      label(for="email") email:
-      input(id="email" name="email" type="text")
+        .field-wrap
+          label(for="email") email:
+          input(id="email" name="email" type="text" data-validation-type="email")
 
-      label(for="password") password:
-      input(id="password" name="password" type="password")
+        .field-wrap
+          label(for="password") password:
+          input(id="password" name="password" type="password")
 
-      label(for="repeat-password") password:
-      input(id="repeat-password" name="repeat-password" type="password")
+        .field-wrap
+          label(for="repeat-password") repeat password:
+          input(id="repeat-password" name="repeat-password" type="password" data-validation-type="confirmation" data-validation-equals="password")
 
-      input(value="create" type="submit")
+        input(value="create" type="submit")
+    script(src="/javascripts/components/notification.js")
+    script(src="/javascripts/components/validator.js")
+    script(src="/javascripts/forms/user.js")
+    script(src="/javascripts/pages/users.js")
 
