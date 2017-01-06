@@ -1,7 +1,7 @@
 const express = require('express'),
   router = express.Router(),
   restClient = require('../services/restClient'),
-  gateway = require('../../config/gateway');
+  gateway = require('../../config/application').gateway;
 
 router.get('/new', (req, res) => {
   res.render('users/new');
