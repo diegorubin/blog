@@ -15,3 +15,12 @@ Funcionalidade: Cadastro de usuário
     E clico em "create"
     Então deve ser exibido a mensagem de erro "confirmation.notEqual"
 
+  Cenário: Criar um usuário novo
+    Dado que eu esteja na sessão "usuario-novo" do tshield
+    Quando eu adiciono o email "valid@example.com"
+    E eu insiro o username "usuario"
+    E eu insiro a senha "123456"
+    E eu insiro na confirmação da senha "123456"
+    E clico em "create"
+    Então deve ser exibido a mensagem "user.created"
+
