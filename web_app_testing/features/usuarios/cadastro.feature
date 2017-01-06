@@ -24,3 +24,12 @@ Funcionalidade: Cadastro de usuário
     E clico em "create"
     Então deve ser exibido a mensagem "user.created"
 
+  Cenário: Não permitir criar um usuário duplicado
+    Dado que eu esteja na sessão "usuario-duplicado" do tshield
+    Quando eu adiciono o email "valid@example.com"
+    E eu insiro o username "usuario"
+    E eu insiro a senha "123456"
+    E eu insiro na confirmação da senha "123456"
+    E clico em "create"
+    Então deve ser exibido a mensagem "user.duplicated"
+
