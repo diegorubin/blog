@@ -10,4 +10,8 @@ Funcionalidade: Cadastro de usuário
     Então deve ser exibido a mensagem de erro "email.invalid"
 
   Cenário: Não enviar se as senhas não conferem
+    Quando eu insiro a senha "12345"
+    E eu insiro na confirmação da senha "123456"
+    E clico em "create"
+    Então deve ser exibido a mensagem de erro "confirmation.notEqual"
 
