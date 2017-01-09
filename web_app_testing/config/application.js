@@ -6,7 +6,7 @@ const application = {
     port: process.env.PORT || 5000
   },
   tests: {
-    caseTimeout: 5000,
+    caseTimeout: 10000,
     endpoint: 'http://localhost:5000',
     integration: {
       showNavigation: true,
