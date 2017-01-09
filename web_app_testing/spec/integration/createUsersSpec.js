@@ -14,13 +14,6 @@ describe('create users', () => {
   beforeEach(() => {
     require('../../app');
     context = startIntegrationContext();
-
-    // services responses
-    nock('http://localhost:4567')
-     .post('/users')
-     .reply(201, {
-       message: 'user.created'
-      });
   });
 
   it('not save if email is invalid', (done) => {
@@ -57,6 +50,13 @@ describe('create users', () => {
   }, config.tests.caseTimeout); 
 
   it('save valid user', (done) => {
+
+    nock('http://localhost:4567')
+     .post('/users')
+     .reply(201, {
+       message: 'user.created'
+      });
+
     integrationContext('', {done: done}, (testContext, done) => {
       context
         .goto(getUrl('/users/new'))
@@ -75,5 +75,33 @@ describe('create users', () => {
         });
     });
   }, config.tests.caseTimeout);
+
+  it('not save duplicated user', (done) => {
+
+    nock('http://localhost:4567')
+     .post('/users')
+     .reply(201, {
+       message: 'user.duplicated'
+      });
+
+    integrationContext('', {done: done}, (testContext, done) => {
+      context
+        .goto(getUrl('/users/new'))
+        .type('[name=username]', 'user')
+        .type('[name=email]', 'email@example.com')
+        .type('[name=password]', '123456')
+        .type('[name=password_confirmation]', '123456')
+        .click('[type=submit]')
+        .wait(500)
+        .evaluate((selector) => {
+          return document.querySelector(selector).innerText;
+        }, '.alert')
+        .then((text) => {
+          expect(text).toEqual('user.duplicated');
+          done();
+        });
+    });
+  }, config.tests.caseTimeout);
+
 });
 
